@@ -21,5 +21,11 @@
 <div>
     <a href="theory/others.jsp" target="_blank">其他</a>
 </div>
+<h3>include动作实例</h3>
+<jsp:include page="include/date.jsp" flush="true"/>
+<h3>JavaBean实例</h3>
+<jsp:useBean id="test" class="javaBean.TestBean"/>
+<jsp:setProperty name="test" property="message" value="测试JavaBean"/>
+<jsp:getProperty name="test" property="message"/>
 </body>
 </html>
