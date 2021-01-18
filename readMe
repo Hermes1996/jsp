@@ -1,0 +1,11 @@
+JSP隐式(内置）对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。
+对象 	            描述
+request 	HttpServletRequest 接口的实例  获取HTTP头信息，cookies，HTTP方法;需引入javax.servlet-api依赖
+response 	HttpServletResponse 接口的实例 添加新的cookies，时间戳，HTTP状态码
+out 	JspWriter类的实例，用于把结果输出至网页上
+session 	HttpSession类的实例，跟踪在各个客户端请求间的会话
+application 	ServletContext类的实例，与应用上下文有关
+config 	ServletConfig类的实例，访问Servlet或者JSP引擎的初始化参数，比如文件路径等
+pageContext 	PageContext类的实例，提供对JSP页面所有对象以及命名空间的访问，传给JSP页面的指令信息，包括缓存信息，ErrorPage URL,页面scope；提供方法removeAttribute()
+page 	类似于Java类中的this关键字
+Exception 	Exception类的对象，代表发生错误的JS

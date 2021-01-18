@@ -27,5 +27,8 @@
 <jsp:useBean id="test" class="javaBean.TestBean"/>
 <jsp:setProperty name="test" property="message" value="测试JavaBean"/>
 <jsp:getProperty name="test" property="message"/>
+<div>
+<a href="theory/requestHeader.jsp" target="_blank">客户请求头</a>
+</div>
 </body>
 </html>
