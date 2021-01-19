@@ -9,3 +9,10 @@ config 	ServletConfig类的实例，访问Servlet或者JSP引擎的初始化参�
 pageContext 	PageContext类的实例，提供对JSP页面所有对象以及命名空间的访问，传给JSP页面的指令信息，包括缓存信息，ErrorPage URL,页面scope；提供方法removeAttribute()
 page 	类似于Java类中的this关键字
 Exception 	Exception类的对象，代表发生错误的JS
+
+
+
+
+span行内元素： 不会换行 <span class="demonstration">滑块&nbsp</span>不会换行
+div 块级元素：会换行 <div class="demonstration">滑块&nbsp</div>会换行
+	常见的块级元素有：div、p、h1-h6、ol-li、table、header等等

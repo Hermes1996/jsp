@@ -22,13 +22,31 @@
     <a href="theory/others.jsp" target="_blank">其他</a>
 </div>
 <h3>include动作实例</h3>
-<jsp:include page="include/date.jsp" flush="true"/>
+<jsp:include page="theory/date.jsp" flush="true"/>
 <h3>JavaBean实例</h3>
 <jsp:useBean id="test" class="javaBean.TestBean"/>
 <jsp:setProperty name="test" property="message" value="测试JavaBean"/>
 <jsp:getProperty name="test" property="message"/>
 <div>
 <a href="theory/requestHeader.jsp" target="_blank">客户请求头</a>
+</div>
+<div>
+<a href="theory/responseFlush.jsp" target="_blank">response每隔5秒自动刷新</a>
+</div>
+<div>
+<a href="theory/HttpStatus.jsp" target="_blank">HTTP状态码</a>
+</div>
+<div>
+<a href="theory/getUrlParameter.jsp" target="_blank">get方法获取url参数</a>
+</div>
+<div>
+<a href="html/getForm.html" target="_blank">get提交form</a>
+</div>
+<div>
+<a href="html/postForm.html" target="_blank">post提交form</a>
+</div>
+<div>
+<a href="html/checkbox.html" target="_blank">post传递 Checkbox 数据到JSP</a>
 </div>
 </body>
 </html>

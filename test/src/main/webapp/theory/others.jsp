@@ -14,7 +14,6 @@
 </head>
 <body>
 <%
-    PrintStream ps = new PrintStream(System.out, true, "gbk");
     ps.println("你的IP地址：" + request.getRemoteAddr());
     ps.println("今天的时期：" + (new Date()).toLocaleString());
 %>
