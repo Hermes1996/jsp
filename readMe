@@ -16,3 +16,6 @@ Exception 	Exception类的对象，代表发生错误的JS
 span行内元素： 不会换行 <span class="demonstration">滑块&nbsp</span>不会换行
 div 块级元素：会换行 <div class="demonstration">滑块&nbsp</div>会换行
 	常见的块级元素有：div、p、h1-h6、ol-li、table、header等等
+
+
+过滤器接口Filter包：javax.servlet.Filter

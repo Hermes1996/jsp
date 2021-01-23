@@ -48,5 +48,14 @@
 <div>
 <a href="html/checkbox.html" target="_blank">post传递 Checkbox 数据到JSP</a>
 </div>
+<div>
+<a href="theory/login.jsp" target="_blank">登入过滤器</a>
+</div>
+<div>
+<a href="cookie/cookieContents.jsp" target="_blank">cookie相关</a>
+</div>
+<div>
+<a href="function/uploadFile.jsp" target="_blank">文件上传</a>
+</div>
 </body>
 </html>
