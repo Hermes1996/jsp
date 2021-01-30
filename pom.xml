@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.project.html</groupId>
-    <artifactId>jsp</artifactId>
+    <artifactId>front-end</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>test</module>
+        <module>jsp</module>
+        <module>javaScript</module>
     </modules>
 <dependencies>
     <dependency>
