@@ -19,3 +19,25 @@ div 块级元素：会换行 <div class="demonstration">滑块&nbsp</div>会�
 
 
 过滤器接口Filter包：javax.servlet.Filter
+
+html:静态页面
+jsp:%带servlet,支持Java代码
+js:前端函数/方法,类Java代码
+
+JavaScript 数据类型
+在 JavaScript 中有 6 种不同的基本数据类型：
+    string
+    number
+    boolean
+    object
+    function
+    symbol
+    注：型，表示独一无二的值Symbol 是 ES6 引入了一种新的原始数据类
+3 种对象类型：
+    Object
+    Date
+    Array
+2 个不包含任何值的数据类型：
+    null
+    undefined
+

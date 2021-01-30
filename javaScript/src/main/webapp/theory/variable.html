@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+</head>
+<body>
+<script>
+    var x = 5e2;
+    var y = 10e-2;
+    console.log("x+y:" + (x + y));
+
+    document.write("支持字符串，数组，集合[对象]..");
+    var b=true;
+    var cars=new Array();
+    cars[0] ="Sala";
+    var person = {firstName: "Dear", lastName: "John"};
+
+    var string="abc";
+    var char=string[0];
+    console.log(char);
+
+    var undefined;
+    var varNull =null;
+    console.log(typeof undefined+","+typeof varNull+","+typeof cars);
+    console.log("Date和Array对象类型必须用constructor属性"+cars.constructor);
+
+    let id1=Symbol("id");
+    let id2=Symbol("id");
+    console.log("唯一性:"+(id1==id2));
+    let obj={[id1]:"无法被遍历",lastName:"json"};
+    for (let objValue in obj) {
+        console.log(obj[objValue]);
+    }
+
+    var var1="全局变量";
+    f();
+    function f() {
+        var var1="局部变量"
+        console.log(var1)
+    }
+    var var2="全局变量";
+    f2();
+    function f2() {
+        console.log(var2)
+    }
+
+    console.log("字符串转化为数字："+Number("3.14")+Number("不是个数字"));
+    console.log("字符串转化为整数："+Number.isInteger("3.14")+Number.parseInt("3.14"))
+</script>
+</body>
+</html>
