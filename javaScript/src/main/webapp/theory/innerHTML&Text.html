@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="text-align:center;">
+<div id="test">这是一段包含一些
+    <codes>代码</codes>和
+    <italic>文本</italic>！
+</div>
+<p></p>
+<button onClick="innerTextFn()">innerHTML</button>
+<button onClick="innerHTMLFn()">innerText</button>
+<p id="op"></p>
+
+<script>
+    function innerTextFn() {
+        var x = document.getElementById('test');
+        alert(x.innerText);
+    }
+
+    function innerHTMLFn() {
+        var x = document.getElementById('test');
+        alert(x.innerHTML);
+    }
+</script>
+</body>
+</html>

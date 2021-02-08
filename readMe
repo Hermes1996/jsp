@@ -1,3 +1,5 @@
+
+
 JSP隐式(内置）对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。
 对象 	            描述
 request 	HttpServletRequest 接口的实例  获取HTTP头信息，cookies，HTTP方法;需引入javax.servlet-api依赖
@@ -41,3 +43,33 @@ JavaScript 数据类型
     null
     undefined
 
+js文件命名规范：采用小写方式，以中划线分隔，禁止驼峰式命名。比如：my-project-name
+
+HTML DOM Document 对象
+forms[] 	返回对文档中所有 Form 对象引用。
+all[] 	提供对文档中所有 HTML 元素的访问。
+images[] 	返回对文档中所有 Image 对象引用。
+links[] 	返回对文档中所有 Area 和 Link 对象引用。
+getElementById() 	返回对拥有指定 id 的第一个对象的引用。
+    innerHTML属性设置内容后, 会将内容中包括的标签解析. innerText不会.
+getElementsByName() 	返回带有指定名称的对象集合。
+write() 	向文档写 HTML 表达式 或 JavaScript 代码。
+writeln() 	等同于 write() 方法，不同的是在每个表达式之后写一个换行符。
+
+js ==和===
+==在判断相等时会进行隐式的类型转换
+0 == "0"  //true
+1 == true //true // Number Boolean
+[] == ""  //true // Object String
+null == undefined //true
+建议是只要变量的数据类型能够确定，一律使用===
+
+js || 和 &&
+逻辑与的优先级是高于逻辑或的
+undefined未赋值 为 false
+0是false
+c=a && b :  计算表达式a（也可以是函数）的运算结果，
+                哪个最先为 false，返回该的结果；都为true返回b
+
+c=a || b :   计算表达式a（也可以是函数）的运算结果，
+                哪个最先为 True，返回该的结果；都为false返回b

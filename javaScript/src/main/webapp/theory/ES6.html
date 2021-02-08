@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6新特性</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    {
+        var x=2;
+        let y=2;
+    }
+    console.log("var块级作用域可以使用"+x);
+    // console.log("let块级作用域不可以使用"+y);
+
+    var i = 5;//全局
+    for (var i = 0; i < 10; i++) {
+        // 一些代码...
+    }
+    console.log("var声明的变量是全局的，包括循环体内与循环体外"+i);
+    let j = 5;
+    for (let j = 0; j < 10; j++) {
+        // 一些代码...
+    }
+    console.log("let声明的变量作用域只在循环体内，循环体外的变量不受影响"+j);
+
+    var r= 2;
+    var r=3;
+    //var可以重置var
+    // let r =4; let不可重置var,let
+
+    const PI=3.14, sin=30;
+    // PI =1.2;  const定义一个或者多个变量，且不可重置
+    const car={type:"Fiat",model:"500",color:"white"};
+    car.type="BWM";
+    //定义的对象，数组，它的属性可以修改
+
+    //箭头函数
+    const element = function (x, y) {
+        return x * y
+    };
+    //改写
+    const element0 = (x, y) =>{
+        return x * y
+    };
+    // 方法体{}只有return语句时，可省return和{}
+    const element1 = (x, y) => x * y;
+    //参数唯一，可省括号
+    const element2 = x => x +500;
+
+    // ES6设置默认参数
+    const element3=(x,y=500)=>x*y;
+    document.getElementById("demo").innerHTML=element3(5)
+
+
+
+
+</script>
+
+</body>
+</html>
