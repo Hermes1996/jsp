@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+</head>
+<body>
+<p>这是一段文本</p>
+<button>AJAX获取外部内容</button>
+<button>AJAXget外部内容</button>
+<!--AJAX:不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示-->
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function () {
+        // $("button").click(function () {
+        //     $("p").load("../demo.txt")
+        // })
+        // 默认三个回调参数:responseTxt成功的文本内容；xhr包含 XMLHttpRequest 对象
+        $("button:first").click(function () {
+            $("p").load("../demo.txt",function (responseTxt,statusTxt,xhr) {
+                if(statusTxt=="success"){
+                    alert("成功加载")
+                }else{
+                    alert("Error"+xhr.status+":"+xhr.statusText)
+                }
+            })
+        })
+    });
+    $(function () {
+        $("button:eq(1)").click(function () {
+            $.get("../demo.txt",function (date,status) {
+                alert("状态："+status+"\n内容: "+date)
+            })
+        })
+    })
+
+
+</script>
+</html>

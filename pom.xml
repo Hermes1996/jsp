@@ -11,6 +11,7 @@
     <modules>
         <module>jsp</module>
         <module>javaScript</module>
+        <module>HTML</module>
     </modules>
 <dependencies>
     <dependency>
