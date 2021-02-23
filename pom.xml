@@ -12,6 +12,7 @@
         <module>jsp</module>
         <module>javaScript</module>
         <module>HTML</module>
+        <module>javaEE</module>
     </modules>
 <dependencies>
     <dependency>

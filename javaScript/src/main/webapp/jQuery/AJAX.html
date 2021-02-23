@@ -8,6 +8,7 @@
 <p>这是一段文本</p>
 <button>AJAX获取外部内容</button>
 <button>AJAXget外部内容</button>
+<button>AJAXpost外部内容</button>
 <!--AJAX:不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示-->
 </body>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -27,9 +28,21 @@
             })
         })
     });
+    // $.get() 方法通过 HTTP GET 请求从服务器上请求数据。
     $(function () {
         $("button:eq(1)").click(function () {
             $.get("../demo.txt",function (date,status) {
+                alert("状态："+status+"\n内容: "+date)
+            })
+        })
+    });
+    // $.post() 方法通过 HTTP POST 请求向服务器提交数据。
+    $(function () {
+        $("button:eq(2)").click(function () {
+            $.post("../demo.php", {
+                name:"大熊",
+                url:"http://www.DaXiong.com"
+            },function (date,status) {
                 alert("状态："+status+"\n内容: "+date)
             })
         })

@@ -57,5 +57,8 @@
 <div>
 <a href="function/uploadFile.jsp" target="_blank">文件上传</a>
 </div>
+<div>
+<a href="theory/app.jsp" target="_blank">app回显</a>
+</div>
 </body>
 </html>

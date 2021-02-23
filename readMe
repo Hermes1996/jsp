@@ -99,6 +99,9 @@ var arr = (1, 123, 500, 115, 44, 88);
 x=f(arr);
 function f(arr) {   var i = arrs[0];}
 
+var xx= function () {}
+var申明函数,引用需要加括号，xx（）
+
 class和id选择器
 class可同为一个标签，id标签不可重复
 
@@ -126,3 +129,13 @@ POST 方法最多允许 8 Mb 的可变大小。
 GET 方法的数据是可缓存的，而 POST 方法的数据是无法缓存的。
 7、主要作用
 GET 方法主要用于获取信息。而 POST 方法主要用于更新数据
+
+
+前端name,id,value,dictKey
+id为标识，不传递数据
+value：按钮为显示文本，如：删除，重置按钮，复选框为提交的值
+name:复选框控件的名字，如跑步为running
+    下拉框和搜索框,name为提交的键，value为提交的值(声明value会覆盖placeholder,value是默认存在的，可省略)
+dictkey为下拉框页面中文数据
+
+button的type 属性，IE的默认是 “button”，非IE默认是 “submit”(提交数据）
