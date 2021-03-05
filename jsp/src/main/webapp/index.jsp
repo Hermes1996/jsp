@@ -13,7 +13,7 @@
 <a href="theory/lifeCycle.jsp" target="_blank">生命周期</a>
 </div>
 <div>
-    <a href="theory/use%25.jsp" target="_blank">%的使用</a>
+    <a href="theory/use_%.jsp" target="_blank">%的使用</a>
 </div>
 <div>
     <a href="theory/controllLanguage.jsp" target="_blank">控制语句</a>

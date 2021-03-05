@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 public class JudgeUtils
 {
@@ -38,5 +38,16 @@ public class JudgeUtils
 			return "xx";
 		}
 		return null;
+	}
+	//Objects避免空指针
+	void ObjectsUtils()
+	{
+		Integer i=128;
+		if(Objects.equals(i,128)){
+			System.out.println(true);
+		}
+		else{
+			System.out.println(false);
+		}
 	}
 }
