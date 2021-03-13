@@ -149,3 +149,8 @@ name:复选框控件的名字，如跑步为running
 dictkey为下拉框页面中文数据
 
 button的type 属性，IE的默认是 “button”，非IE默认是 “submit”(提交数据）
+
+css:
+postion:static默认值，位置固定，可用float属性，不能用right，top，z-index属性，可以用margin-top属性
+fixed一般用于广告，随滚动条一直会出现；可用z-index(图层叠加的位置），right，top属性，margin-top属性
+relative 与fixed一样，只不过不是一直出现

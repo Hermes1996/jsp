@@ -30,4 +30,12 @@ public class Utils
 		}
 		return null;
 	}
+
+	public static void main(String[] args)
+	{
+		Utils utils = new Utils();
+		String mask = utils.demo("MASK");
+		System.out.println(mask);
+
+	}
 }
