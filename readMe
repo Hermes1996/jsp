@@ -139,6 +139,12 @@ POST 方法最多允许 8 Mb 的可变大小。
 GET 方法的数据是可缓存的，而 POST 方法的数据是无法缓存的。
 7、主要作用
 GET 方法主要用于获取信息。而 POST 方法主要用于更新数据
+$(this) 	当前 HTML 元素
+$("p") 	所有 <p> 元素
+$("p.intro") 	所有 class="intro" 的 <p> 元素
+$(".intro") 	所有 class="intro" 的元素
+$("#intro") 	id="intro" 的元素
+$("ul li:first") 	每个 <ul> 的第一个 <li> 元素
 
 
 前端name,id,value,dictKey

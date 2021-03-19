@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <description>customer functions library</description>
+    <display-name>customer functions</display-name>
+    <tlib-version>1.1</tlib-version>
+    <short-name>app</short-name>
+    <uri>http://java.sun.com/jsp/jstl/functions</uri>
+
+    <!-- html编码 -->
+    <function>
+        <name>html</name>
+        <function-class>common.CommonUtils</function-class>
+        <function-signature>
+            java.lang.String html(java.lang.String)
+        </function-signature>
+    </function>
+    <!-- SearchForm Tag -->
+    <tag>
+        <name>searchform</name>
+        <tag-class>web.tags.SearchFormTag</tag-class>
+        <body-content>scriptless</body-content>
+        <dynamic-attributes>true</dynamic-attributes>
+        <attribute>
+            <name>id</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>action</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>method</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onsubmit</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>pageno</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>pagesize</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>totalcount</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>
