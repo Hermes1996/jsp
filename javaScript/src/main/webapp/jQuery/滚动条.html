@@ -12,8 +12,8 @@
             background-color: lightseagreen;
             bottom: 180px;
             float: right;
+            position: fixed;
             right: 15px;
-            position: relative;
             z-index: 10;
         }
         #pass-top a {
@@ -128,9 +128,10 @@
     $(function() {
 
         $(window).scroll(function () {
-            // 若滚动条离顶部大于100元素
-            if ($(window).scrollTop() > 100) {
+            // 若滚动条离顶部大于200元素
+            if ($(window).scrollTop() > 200) {
                 $("#d-top").fadeIn(500);// 以1秒的间隔渐显id=gotop的元素
+                $("#pass-top").hide()
             } else {
                 $("#d-top").fadeOut(500);// 以1秒的间隔渐隐id=gotop的元素
             }

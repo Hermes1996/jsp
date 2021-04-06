@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vue 测试实例</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app" v-if="ok">
+  <p>{{ message }}</p>
+  <p v-html="name">v-html标签-被覆盖</p>
+  <p>{{ fx() }}</p>
+</div>
+<div id="demo" >
+  <p>{{ message }}</p>
+  <p>{{ name }}</p>
+<!--  双向绑定-->
+  <input v-model="name">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            name: "Eric",
+            ok:true
+        },
+        methods: {
+            fx: function () {
+                console.log("警告！")
+            }
+        }
+    });
+    var data1 = {message: "helloWorld", name: "James"};
+    var vue1 = new Vue({
+        el: "#demo",
+        data: data1
+    });
+    document.write(vue1.message == data1.message);
+    //设置属性可以改变原数据
+    vue1.message="hello";
+    data1.message="hello2";
+    //vue1里面对象用$
+    ducument.write(vue1.$data==data1)
+</script>
+</body>
+</html>

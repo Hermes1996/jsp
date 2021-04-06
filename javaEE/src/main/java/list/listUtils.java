@@ -8,13 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * TODO 添加类的一句话简单描述。
- *
- * @author 丁光辉
- * @version 1.0
- * @since Bessky V100R001C00
- */
+
 public class listUtils
 {
 

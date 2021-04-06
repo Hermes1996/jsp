@@ -22,6 +22,8 @@ Jsp标签：
 
 5	<%@ page contentType="text/html;charset=UTF-8" language="java" %
 		jsp指令
+截取字符串  ${fn:substring(orderItem.relatedProduct.customsNameCn,0,10)}
+日期 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:dd"/>
 
 
 JSP隐式(内置）对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。
@@ -153,10 +155,29 @@ value：按钮为显示文本，如：删除，重置按钮，复选框为提交
 name:复选框控件的名字，如跑步为running
     下拉框和搜索框,name为提交的键，value为提交的值(声明value会覆盖placeholder,value是默认存在的，可省略)
 dictkey为下拉框页面中文数据
+name作为标识在input里面，外面拿不到值，id可以
+
+
+
 
 button的type 属性，IE的默认是 “button”，非IE默认是 “submit”(提交数据）
 
-css:
+css:	<div style="width: 12mm; height: 4mm; float: left; border-left: 1px solid;">文本</div>
 postion:static默认值，位置固定，可用float属性，不能用right，top，z-index属性，可以用margin-top属性
 fixed一般用于广告，随滚动条一直会出现；可用z-index(图层叠加的位置），right，top属性，margin-top属性
 relative 与fixed一样，只不过不是一直出现
+边框不显示底部border: 2px solid black;border-bottom:0
+边框里面文字与边框上部分距离line-height: 10mm
+边框里面文字位置text-align: center
+文字块位置float: left
+两个元素上下间隔margin-top: 2mm;
+div里面文字整体加粗font-weight: bold
+图片大小<img src="路径" height="50mm" width="65%">
+
+
+
+vue
+hash模式和history模式，带＃的则是hash模式(默认）index.js里面加上  mode:'history',
+引用Vue.js后可以在 浏览器上直接使用Vue 的实例  .vue 只能通过编译后，才可在浏览器上运行查看效果
+格式：new Vue({键：值})
+data 页面数据传递{{键}}

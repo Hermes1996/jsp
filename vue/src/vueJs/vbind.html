@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>属性绑定,非数据绑定</title>
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+  <style>
+    .classA
+    {
+      background-color:lightsteelblue;
+      font-color:teal;
+    }
+  </style>
+</head>
+
+<body>
+<div id="app">
+  <p v-bind:name="name">v-bind：键值对</p>
+  <p :name="name">：简写</p>
+  <a :href="url">url</a>
+  <p class="classA" :class="{ active: isActive, 'text-danger': hasError }">class多属性</p>
+</div>
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            name: "Eric",
+            url:"http://www.baidu.com",
+            isActive: true,
+            hasError: false
+        }
+    })
+</script>
+</body>
+</html>

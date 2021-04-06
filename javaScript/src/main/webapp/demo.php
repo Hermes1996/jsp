@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php
-echo "My name is " . $name . "<br>";
-echo "My url is " . $url . "<br>";
-?>
+$name = $_POST["name"];
+$url = $_POST["url"];
 
-</body>
-</html>
+
+echo "\n"."名字:".$name."\n";
+echo "网址:".$url;
+?>
