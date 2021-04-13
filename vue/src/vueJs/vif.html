@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-show="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if</title>
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <div v-if="Math.random() == 0.5">
+    中奖了
+  </div>
+  <div v-else-if="Math.random() > 0.5">
+    大了
+   <p>{{demo()}}</p>
+  </div>
+  <div v-else>
+    小了
+    <p>{{demo()}}</p>
+  </div>
+<!--  不过 v-if 指令会根据表达式重建或销毁元素或组件以及它们所绑定的事件。v-show 指令只是简单地设置 css 属性。-->
+<!--  因为 v-if 指令开销较大，所以更适合条件不经常改变的场景。而 v-show 指令适合条件频繁切换的场景。-->
+  <div v-show="type=='1'">
+    v-show改变css
+  </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            type:"1"
+        },
+        methods:{
+            demo:function () {
+                console.log(Math.random())
+            }
+        }
+    })
+</script>
+</html>

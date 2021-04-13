@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="demo">
- {{message| upperCa}}
+ {{message,message2| upperCa}}
 </div>
 
 </body>
@@ -15,12 +15,14 @@
   new Vue({
       el:"#demo",
       data:{
-          message:"abc123"
+          message:"abc123",
+          message2:"ABC456"
       },
       filters:{
-          upperCa:function (value) {
+          upperCa:function (value,value2) {
               value=value.toString();
-              return value.charAt(0).toUpperCase()+value.slice(1)
+              value2=value2.toString();
+              return value.charAt(0).toUpperCase()+value.slice(1)+" "+value2.charAt(0).toLowerCase()+value2.slice(1)
           }
       }
   })

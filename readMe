@@ -37,7 +37,7 @@ config 	ServletConfig类的实例，访问Servlet或者JSP引擎的初始化参�
 pageContext 	PageContext类的实例，提供对JSP页面所有对象以及命名空间的访问，传给JSP页面的指令信息，包括缓存信息，ErrorPage URL,页面scope；提供方法removeAttribute()
 page 	类似于Java类中的this关键字
 Exception 	Exception类的对象，代表发生错误的JS
-
+JSTL:JSP标准标签库
 
 
 
@@ -122,6 +122,11 @@ div标签
 常用于带颜色的方块文本框
 
 jQuery是一个轻量级的"写的少，做的多"的JavaScript库(封装），多用于事件和效果展示
+$("*[name='name']").val(); //获取vlaue值
+$("*[name='name']").attr('id','name'); //添加id名称
+$("*[name='name']").after('<div>hello world</div>'); //在当前外添加元素
+jQuery(document).ready(function() { 全局变量声明：  isEditableNew =false;
+    或window.isEditableNew; window.isEditableNew =false;
 
 1、发送的数据数量
 在 GET 中，只能发送有限数量的数据，因为数据是在 URL 中发送的。
@@ -157,8 +162,21 @@ name:复选框控件的名字，如跑步为running
 dictkey为下拉框页面中文数据
 name作为标识在input里面，外面拿不到值，id可以
 
-
-
+获取tbody元素 <tbody id="history_income_list">
+var trList = $("#history_income_list").children("tr")
+    for (var i=0;i<trList.length;i++) {
+        var tdArr = trList.eq(i).find("td");
+        var history_income_type = tdArr.eq(0).find('input').val();//收入类别
+    }
+模糊匹配id <tr id="tr-order-item-${orderItemStatus.index }">
+   var skuHistoryList = $("[id^='tr-order-item-']");
+            historySkuNames=new Array();
+            for (var i = 0; i < skuHistoryList.length; i++) {
+                var tdArr = skuHistoryList.eq(i).find("td");
+                var historySkuName = tdArr.eq(1).find('input').val();
+                historySkuNames[i]=historySkuName;
+            }
+数组之间的比较需要tostring()
 
 button的type 属性，IE的默认是 “button”，非IE默认是 “submit”(提交数据）
 
@@ -175,9 +193,10 @@ div里面文字整体加粗font-weight: bold
 图片大小<img src="路径" height="50mm" width="65%">
 
 
-
 vue
 hash模式和history模式，带＃的则是hash模式(默认）index.js里面加上  mode:'history',
 引用Vue.js后可以在 浏览器上直接使用Vue 的实例  .vue 只能通过编译后，才可在浏览器上运行查看效果
 格式：new Vue({键：值})
-data 页面数据传递{{键}}
+页面数据、函数传递{{键}} 与input v-blind双向绑定 [v-blind：简写为：]
+监听事件<button v-on:click [简写为 @click]
+普通<script>里面语句“；”隔开，vue","隔开

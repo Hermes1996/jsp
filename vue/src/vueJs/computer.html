@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算</title>
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="demo">
+  <p>{{message}}</p>
+  <p>{{message2}}</p>
+<!--  监听事件-->
+<!--  <button v-on:click="reverseStr()">反转字符串</button>-->
+<button @click="reverseStr()">反转字符串</button>
+<button @click="reverseStr">反转字符串</button>
+</div>
+</body>
+<script>
+  var cnt=1;
+  new Vue({
+      el:"#demo",
+      data: {
+          message: "hello eric",
+          message2: "hello eric",
+      },
+      methods: {
+          // computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。
+          computer: {
+              reverseStr: function () {
+                  cnt+=1;
+                  this.message = this.message.split("").reverse().join("")+cnt
+              }
+          },
+          reverseStr: function () {
+              cnt+=1;
+              this.message2 = this.message2.split("").reverse().join("")+cnt
+          }
+      }
+  })
+</script>
+</html>
