@@ -11,12 +11,7 @@
   <p v-html="name">v-html标签-被覆盖</p>
   <p>{{ fx()}}</p>
 </div>
-<div id="demo" >
-  <p>{{ message }}</p>
-  <p>{{ name }}</p>
-<!--  双向绑定-->
-  <input v-model="name"><br>
-</div>
+
 
 <script>
     new Vue({
@@ -31,17 +26,7 @@
             },
         }
     });
-    var data1 = {message: "helloWorld", name: "James"};
-    var vue1 = new Vue({
-        el: "#demo",
-        data: data1,
-    });
-    document.write(vue1.message == data1.message);
-    //设置属性可以改变原数据
-    vue1.message="hello";
-    data1.message="hello2";
-    //vue1里面对象用$
-    document.write(vue1.$data==data1)
+
 </script>
 </body>
 </html>

@@ -8,9 +8,15 @@
     .classA
     {
       background-color:lightsteelblue;
-      font-color:teal;
+      color:teal;
     }
-  </style>
+    .active{
+      background-color:yellow;
+    }
+    .error{
+      background-color:indianred;
+    }
+ </style>
 </head>
 
 <body>
@@ -18,11 +24,10 @@
   <p v-bind:name="name">v-bind：键值对</p>
   <p :name="name">：简写</p>
   <a :href="url">url</a>
-  <p class="classA" :class="{ active: isActive, 'text-danger': hasError }">class多属性</p>
+  <p class="classA" :class="{ 'active': isActive,'error': hasError }">class多属性后者覆盖前者覆盖class</p>
 </div>
 
 <script>
-
     new Vue({
         el: '#app',
         data: {
@@ -30,7 +35,7 @@
             name: "Eric",
             url:"http://www.baidu.com",
             isActive: true,
-            hasError: false
+            hasError: true
         }
     })
 </script>

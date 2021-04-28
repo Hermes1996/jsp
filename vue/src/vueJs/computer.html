@@ -9,10 +9,10 @@
 <div id="demo">
   <p>{{message}}</p>
   <p>{{message2}}</p>
-<!--  监听事件-->
-<!--  <button v-on:click="reverseStr()">反转字符串</button>-->
-<button @click="reverseStr()">反转字符串</button>
-<button @click="reverseStr">反转字符串</button>
+  反转字符串(基于缓存):<p>{{reverseStr}}</p>
+  <p>{{reverseStr}}</p>
+  反转字符串(methods):<p>{{reverseStr2()}}</p>
+  <p>{{reverseStr2()}}</p>
 </div>
 </body>
 <script>
@@ -23,17 +23,18 @@
           message: "hello eric",
           message2: "hello eric",
       },
-      methods: {
-          // computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。
-          computer: {
-              reverseStr: function () {
-                  cnt+=1;
-                  this.message = this.message.split("").reverse().join("")+cnt
-              }
-          },
+      // computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。
+      // 用作按钮只能点一次
+      computed: {
           reverseStr: function () {
               cnt+=1;
-              this.message2 = this.message2.split("").reverse().join("")+cnt
+              return this.message.split("").reverse().join("")+cnt
+          }
+      },
+      methods: {
+          reverseStr2: function () {
+              cnt+=1;
+              return this.message2.split("").reverse().join("")+cnt
           }
       }
   })

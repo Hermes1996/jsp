@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义组件</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="demo">
+  <cc></cc>
+  <cc1 message="hello"></cc1>
+</div>
+<body>
+<div id="app">
+  <cc2 ></cc2>
+</div>
+<div id="demo2">
+  <div id="counter-event-example">
+    <p>{{ total }}</p>
+    <button-counter @increment="incrementTotal"></button-counter>
+    <button-counter @increment="incrementTotal"></button-counter>
+  </div>
+</div>
+<!--自定义指令-->
+<div id="app2">
+  <p>输入框获取焦点</p>
+  <input v-focus>
+</div>
+</body>
+<script>
+    Vue.component('cc', {
+        template: '<h1>自定义组件h1</h1>'
+    });
+    Vue.component('cc1', {
+        props:["message"],
+        template: '<h1>{{message}}</h1>'
+    });
+    //         1、父组件可以使用 props 把数据传给子组件。
+    //         2、子组件可以使用 $emit 触发父组件的自定义事件。
+    new Vue({
+        el: '#demo'
+    });
+
+    var child = {
+        template: '<h1>自定义组件h3</h1>'
+    };
+    new Vue({
+        el: "#app",
+        components: {
+            'cc2': child
+        }
+    });
+    var counterObj = {
+        counter :0
+    };
+    Vue.component('button-counter', {
+        template: '<button @click="incrementHandler">{{ counter }}</button>',
+        // return 对象-两个按钮共享变量；属性-互不影响
+        data: function () {
+            return counterObj
+
+            // return {
+            //     counter: 0
+            // }
+        },
+        methods: {
+            incrementHandler: function () {
+                this.counter += 1;
+                this.$emit('increment')
+            }
+        },
+    });
+    new Vue({
+        el: '#counter-event-example',
+        data: {
+            total: 0
+        },
+        methods: {
+            incrementTotal: function () {
+                this.total += 1
+            }
+        }
+    });
+    // 自定义指令写法1
+    // Vue.directive('focus', {
+    //     // 当绑定元素插入到 DOM 中
+    //     inserted: function (el) {
+    //         el.focus()
+    //     }
+    // });
+    // new Vue({
+    //     el: '#app2'
+    // })
+  // 写法2
+  new Vue({
+      el:'app2',
+      directives:{
+          focus:{
+              inserted:function (el) {
+                  el:focus()
+              }
+          }
+      }
+  })
+</script>
+</body>
+</html>

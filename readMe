@@ -38,6 +38,17 @@ pageContext 	PageContext类的实例，提供对JSP页面所有对象以及命�
 page 	类似于Java类中的this关键字
 Exception 	Exception类的对象，代表发生错误的JS
 JSTL:JSP标准标签库
+<c:set value="${app:j2cache('J2CACHE_LOGISTICS_CONF', 'yuntu')}" var="logistic"></c:set>
+#if-else  <c:if>...</c:if>不具备else功能
+<c:choose>
+    <c:when test="${not empty logistic[0].code}">
+        ${logistic[0].code}
+    </c:when>
+    <c:otherwise>
+        C89792
+    </c:otherwise>
+</c:choose>
+${(not empty logistic and fn:length(logistic) > 0 and not empty logistic[0].code) ? logistic[0].code : ' C89792'}
 
 
 
@@ -116,6 +127,18 @@ var申明函数,引用需要加括号，xx（）
 
 class和id选择器
 class可同为一个标签，id标签不可重复
+
+js  each遍历return跳不出方法，增加标记
+var res = ture
+.each({
+ if(){
+  res=false
+  return
+ }
+}
+if(!res){
+ return
+}
 
 div标签
 将标题、段落作为一个区域分块，设置样式（style或者选择器实现）
@@ -200,3 +223,7 @@ hash模式和history模式，带＃的则是hash模式(默认）index.js里面�
 页面数据、函数传递{{键}} 与input v-blind双向绑定 [v-blind：简写为：]
 监听事件<button v-on:click [简写为 @click]
 普通<script>里面语句“；”隔开，vue","隔开
+
+java
++= 是简写，a += 1就是a = a+1
+=+并不是简写，a =+ a直接对a的赋值

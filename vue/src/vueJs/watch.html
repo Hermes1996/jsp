@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>监听</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="demo">
+  <p>{{message}}</p>
+  <p><button @click="reverseStr()">反转字符串</button></p>
+  <!-- v-on是监听事件 watch是监听值的变化，vm.$watch监听方法-->
+  <!--v-on：简写@ -->
+  <p><button v-on:click="counter+=1">增加一</button></p>
+  <p>这个按钮被点击{{counter}}</p>
+<!--  绑定传参函数-->
+  <p><button @click="say('hi')">Say hi</button></p>
+<!--  capture: 在传递的父子事件种，父级加入先执行-->
+  <div @click.capture="say('hi')">Say hi
+    <p @click="say('hello')">Say hello</p>
+  </div>
+  <p> 千米 : <input type = "text" v-model = "kilometers"></p>
+  <p>  米 : <input type = "text" v-model = "meters"></p>
+  <p id="info"></p>
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#demo",
+        data: {
+            message: "hello eric",
+            kilometers : 0,
+            meters:0,
+            counter:0
+        },
+        methods: {
+            reverseStr: function () {
+                this.message = this.message.split("").reverse().join("")
+            },
+            say:function (message) {
+                alert(message)
+            }
+        },
+        watch:{
+            kilometers:function(val) {
+                this.kilometers = val;
+                this.meters = this.kilometers * 1000
+            },
+            meters : function (val) {
+                this.kilometers = val/ 1000;
+                this.meters = val;
+            }
+        },
+    });
+    vm.$watch("kilometers",function (newValues,oldValue) {
+        document.getElementById("info").innerHTML="修改前值为: " + oldValue + "，修改后值为: " + newValues;
+    })
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="demo" >
+  <p>{{ message }}</p>
+  <textarea>{{ name }}</textarea>
+  <!--  双向绑定-->
+  <input v-model.trim="name"><br>
+  <p>{{ age }}</p>
+  <input v-model.number="age"><br>
+</div>
+<div id="app">
+  <p>单个复选框</p>
+  <input type="checkbox" id="checkbox" v-model="checked">
+  <label for="checkbox">{{checked}}</label><br>
+  <input type="radio" id="open" value="open door" v-model="picked">
+  <label for="open">open door</label>
+  <input type="radio" id="close" value="close door" v-model="picked">
+  <label for="close">close door</label>
+  <p>选择：{{picked}}</p><br>
+  <select v-model="selected" name="fruit">
+    <option value="">选择一个网站</option>
+    <option value="www.baidu.com">百度</option>
+    <option value="www.google.com">谷歌</option>
+  </select>
+  <p>选择的网站：{{selected}}</p><br>
+</div>
+</body>
+<script>
+    var data1 = {message: "helloWorld", name: "James",age:19};
+    var vue1 = new Vue({
+        el: "#demo",
+        data: data1,
+    });
+    document.write(vue1.message == data1.message);
+    //设置属性可以改变原数据
+    vue1.message="hello";
+    data1.message="hello2";
+    //vue1里面对象用$
+    document.write(vue1.$data==data1)
+  new Vue({
+      el:"#app",
+      data:{
+          checked:false,
+          picked:"open door",
+          selected:""
+      }
+  })
+</script>
+</html>
