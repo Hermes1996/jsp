@@ -49,7 +49,12 @@ JSTL:JSP标准标签库
     </c:otherwise>
 </c:choose>
 ${(not empty logistic and fn:length(logistic) > 0 and not empty logistic[0].code) ? logistic[0].code : ' C89792'}
-
+等于和包含
+数字用${num == 1 }
+字符串用${str eq  "1"}
+包含<c:if test="${fn:contains(StrMain,'string')}">
+  contains//需要实现的内容
+  </c:if>
 
 
 span行内元素： 不会换行 <span class="demonstration">滑块&nbsp</span>不会换行
@@ -139,6 +144,7 @@ var res = ture
 if(!res){
  return
 }
+
 
 div标签
 将标题、段落作为一个区域分块，设置样式（style或者选择器实现）

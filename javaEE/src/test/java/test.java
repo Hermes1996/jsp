@@ -1,10 +1,11 @@
+import org.apache.commons.lang3.BooleanUtils;
 
 class test {
 	public static void main(String[] args)
 	{
-		String xx="1234567";
-		String substring = xx.substring(xx.length() - 6);
-		System.out.println(substring);
-
+		if(!BooleanUtils.isTrue(null))
+		{
+			System.out.println(1);
+		}
 	}
 }
