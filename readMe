@@ -50,11 +50,17 @@ JSTL:JSP标准标签库
 </c:choose>
 ${(not empty logistic and fn:length(logistic) > 0 and not empty logistic[0].code) ? logistic[0].code : ' C89792'}
 等于和包含
-数字用${num == 1 }
-字符串用${str eq  "1"}
-包含<c:if test="${fn:contains(StrMain,'string')}">
-  contains//需要实现的内容
-  </c:if>
+    数字用${num == 1 }
+    字符串用${str eq  "1"}
+    包含<c:if test="${fn:contains(StrMain,'string')}">
+      contains//需要实现的内容
+      </c:if>
+将字符串String转换为整数类型Int
+方法一：
+通过fmt标签把目标字符转换储存起来，如book.bLevel转换成整数后明命名为level，<fmt:parseNumbervar="level"value="{book.bLevel}" type=“number”/>
+方法二：直接乘1
+<c:forEach begin=“1” end="${book.bLevel*1}" var=“i”>
+
 
 
 span行内元素： 不会换行 <span class="demonstration">滑块&nbsp</span>不会换行
@@ -220,7 +226,14 @@ relative 与fixed一样，只不过不是一直出现
 两个元素上下间隔margin-top: 2mm;
 div里面文字整体加粗font-weight: bold
 图片大小<img src="路径" height="50mm" width="65%">
-
+h1-h6默认大小
+h1=32px
+h2=24px
+h3=18.72px
+h4=16px
+p=16px
+h5=13.28px
+h6=12px
 
 vue
 hash模式和history模式，带＃的则是hash模式(默认）index.js里面加上  mode:'history',
